@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-11-23T12:29:55.872959+00:00",
+  "python": "3.12.14",
+  "baseline_commit": "b98189b907dfeb093f65ae4faa85c81a9aea781c",
+  "pytest_exit_code": 0,
+  "test_mode": "offline: embedding/reranking and external LLM responses mocked by baseline test harness; adapter contracts mocked where stated",
+  "live_model_evidence": "live_demo.json contains real OCR and speech recognition with extractive answers",
+  "external_llm_success_verified": false,
+  "docker_image_built": false,
+  "cloud_deployed": false,
+  "browser_microphone_tested": false,
+  "packages": {
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "chromadb": "1.5.9",
+    "fastembed": "0.9.1",
+    "openai": "3.57.0",
+    "langchain-text-splitters": "1.1.3",
+    "faster-whisper": "1.2.1",
+    "rapidocr-onnxruntime": "1.4.4",
+    "reportlab": "5.1.0",
+    "pytest": "9.2.0",
+    "pypdf": "7.1.1",
+    "Pillow": "13.0.0",
+    "numpy": "2.5.5"
+  },
+  "configured_models_registered": {
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": true,
+    "Xenova/ms-marco-MiniLM-L-6-v2": true
+  }
+}

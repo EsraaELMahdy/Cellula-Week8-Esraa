@@ -1,0 +1,6 @@
+$ terraform validate -no-color
+
+Success! The configuration is valid.
+
+
+Exit code: 0

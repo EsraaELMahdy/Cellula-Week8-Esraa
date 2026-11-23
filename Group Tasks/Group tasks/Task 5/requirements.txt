@@ -1,0 +1,14 @@
+pypdf
+python-docx
+langchain-text-splitters
+chromadb
+fastembed
+rank-bm25
+openai
+python-dotenv
+pandas
+pytest
+fastapi
+uvicorn[standard]
+python-multipart
+httpx

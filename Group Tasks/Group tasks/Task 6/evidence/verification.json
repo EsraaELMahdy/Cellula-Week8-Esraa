@@ -1,0 +1,67 @@
+{
+  "timestamp_utc": "2026-11-23T12:23:01.778786+00:00",
+  "cloud_resources_created": false,
+  "plan_kind": "standalone AWS-provider empty-state plan with credential/API discovery disabled",
+  "commands": [
+    {
+      "command": [
+        "terraform",
+        "version",
+        "-json"
+      ],
+      "exit_code": 0,
+      "log": "00_version.txt"
+    },
+    {
+      "command": [
+        "terraform",
+        "fmt",
+        "-check",
+        "-recursive"
+      ],
+      "exit_code": 0,
+      "log": "01_fmt.txt"
+    },
+    {
+      "command": [
+        "terraform",
+        "init",
+        "-backend=false",
+        "-input=false",
+        "-no-color"
+      ],
+      "exit_code": 0,
+      "log": "02_init.txt"
+    },
+    {
+      "command": [
+        "terraform",
+        "validate",
+        "-no-color"
+      ],
+      "exit_code": 0,
+      "log": "03_validate.txt"
+    },
+    {
+      "command": [
+        "terraform",
+        "plan",
+        "-refresh=false",
+        "-input=false",
+        "-no-color",
+        "-var=offline_plan=true"
+      ],
+      "exit_code": 0,
+      "log": "04_plan.txt"
+    },
+    {
+      "command": [
+        "terraform",
+        "test",
+        "-no-color"
+      ],
+      "exit_code": 0,
+      "log": "05_test.txt"
+    }
+  ]
+}

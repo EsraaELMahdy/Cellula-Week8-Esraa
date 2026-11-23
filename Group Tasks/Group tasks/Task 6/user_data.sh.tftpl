@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+dnf install -y docker awscli2
+systemctl enable --now docker
+install -d -m 700 /opt/document-ai
+install -d -m 755 /opt/document-ai/data
+chown 10001:10001 /opt/document-ai/data
+umask 077
+# No secret is rendered into this template or Terraform state.
+OPENROUTER_KEY=$(aws ssm get-parameter --name '${key_parameter}' --with-decryption --region '${region}' --query Parameter.Value --output text)
+APP_TOKEN=$(aws ssm get-parameter --name '${token_parameter}' --with-decryption --region '${region}' --query Parameter.Value --output text)
+printf 'OPENROUTER_API_KEY=%s\nAPP_API_TOKEN=%s\nAPP_MODE=llm\nAPP_DATA_DIR=/data\nCHROMA_DB_PATH=/data/chroma_db\nHF_HOME=/data/models\nMODEL_CACHE_DIR=/data/models\n' "$OPENROUTER_KEY" "$APP_TOKEN" > /opt/document-ai/app.env
+unset OPENROUTER_KEY APP_TOKEN
+docker pull '${app_image}'
+docker run -d --restart unless-stopped --name document-ai --env-file /opt/document-ai/app.env \
+  --log-driver awslogs --log-opt awslogs-region='${region}' --log-opt awslogs-group='${log_group}' \
+  --log-opt awslogs-stream=application \
+  -p 8000:8000 -v /opt/document-ai/data:/data '${app_image}'

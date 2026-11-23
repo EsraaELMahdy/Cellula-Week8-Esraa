@@ -1,0 +1,12 @@
+# Non-secret no-account plan examples; replace placeholders only for a separately approved future deployment.
+project                    = "document-ai"
+environment                = "dev"
+region                     = "eu-west-1"
+offline_plan               = true
+ami_id                     = "ami-00000000000000000"
+instance_type              = "t3.large"
+allowed_cidr               = "203.0.113.10/32"
+app_image                  = "ghcr.io/example/document-ai:latest"
+openrouter_parameter_arn   = "arn:aws:ssm:eu-west-1:000000000000:parameter/document-ai/openrouter"
+api_token_parameter_arn    = "arn:aws:ssm:eu-west-1:000000000000:parameter/document-ai/api-token"
+disk_gib                   = 50

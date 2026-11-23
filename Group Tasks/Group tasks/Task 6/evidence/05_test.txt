@@ -1,0 +1,11 @@
+$ terraform test -no-color
+
+tests\offline.tftest.hcl... in progress
+  run "restricted_single_host_plan"... pass
+  run "reject_public_ingress"... pass
+tests\offline.tftest.hcl... tearing down
+tests\offline.tftest.hcl... pass
+
+Success! 2 passed, 0 failed.
+
+Exit code: 0

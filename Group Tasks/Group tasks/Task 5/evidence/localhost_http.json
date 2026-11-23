@@ -1,0 +1,14 @@
+{
+  "health": {
+    "status": "ok",
+    "mode": "extractive",
+    "stt_model": "base",
+    "ocr": "RapidOCR Latin/Chinese",
+    "report_planner": "rules",
+    "llm_configured": false,
+    "cloud_deployed": false
+  },
+  "ui_http_status": 200,
+  "expected_controls_present": true,
+  "browser_interaction_tested": false
+}

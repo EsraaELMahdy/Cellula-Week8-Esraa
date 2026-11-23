@@ -1,0 +1,168 @@
+{
+  "timestamp_utc": "2026-11-23T12:29:02.909086+00:00",
+  "python": "3.12.14",
+  "answer_mode": "extractive",
+  "external_llm_called": false,
+  "microphone_ui_exercised": false,
+  "audio_origin": "Synthetic Windows SAPI TTS; not human/team speech",
+  "steps": [
+    {
+      "endpoint": "/image-query",
+      "http_status": 200,
+      "elapsed_seconds": 3.3724,
+      "output": {
+        "answer": "QUARTERLY SALES REPORT\nTotal revenue: 1200 dollars\nProduct A: 700 dollars\nProduct B: 500 dollars\nReporting period: Q3 2026 [image_037b5910_sales_image.png, p. 1]",
+        "analysis": "Extractive mode returns matching source passages; no LLM reasoning was performed.",
+        "sources": [
+          {
+            "document": "image_037b5910_sales_image.png",
+            "page": 1
+          }
+        ],
+        "enough_evidence": false,
+        "results": {},
+        "warnings": [
+          "Extractive demo mode. Matching passages do not establish answer sufficiency."
+        ],
+        "question": "What is the total revenue?",
+        "session_id": "real-local-media-demo",
+        "response_id": "dad4fcaf79d6431e847c2e8445e5fa25",
+        "cached": false,
+        "mode": "extractive",
+        "ocr_text": "QUARTERLY SALES REPORT\nTotal revenue: 1200 dollars\nProduct A: 700 dollars\nProduct B: 500 dollars\nReporting period: Q3 2026",
+        "input_type": "image",
+        "source": "image_037b5910_sales_image.png",
+        "chunks": 1,
+        "input_metadata": {
+          "engine": "RapidOCR ONNX",
+          "recognition_languages": "Latin/Chinese",
+          "width": 1200,
+          "height": 650,
+          "lines": [
+            {
+              "text": "QUARTERLY SALES REPORT",
+              "confidence": 0.9673515151847493
+            },
+            {
+              "text": "Total revenue: 1200 dollars",
+              "confidence": 0.9835329232392488
+            },
+            {
+              "text": "Product A: 700 dollars",
+              "confidence": 0.9769631055268374
+            },
+            {
+              "text": "Product B: 500 dollars",
+              "confidence": 0.9904973642392592
+            },
+            {
+              "text": "Reporting period: Q3 2026",
+              "confidence": 0.9978146457672119
+            }
+          ],
+          "confidence": 0.9832319107914612
+        }
+      }
+    },
+    {
+      "endpoint": "/voice-query",
+      "http_status": 200,
+      "elapsed_seconds": 2.3861,
+      "output": {
+        "answer": "QUARTERLY SALES REPORT\nTotal revenue: 1200 dollars\nProduct A: 700 dollars\nProduct B: 500 dollars\nReporting period: Q3 2026 [image_037b5910_sales_image.png, p. 1]",
+        "analysis": "Extractive mode returns matching source passages; no LLM reasoning was performed.",
+        "sources": [
+          {
+            "document": "image_037b5910_sales_image.png",
+            "page": 1
+          }
+        ],
+        "enough_evidence": false,
+        "results": {},
+        "warnings": [
+          "Extractive demo mode. Matching passages do not establish answer sufficiency."
+        ],
+        "question": "What is the total revenue?",
+        "session_id": "real-local-media-demo",
+        "response_id": "6ad1f0b074024b71b5477cbb14574b47",
+        "cached": false,
+        "mode": "extractive",
+        "transcription": "What is the total revenue?",
+        "input_type": "voice",
+        "input_metadata": {
+          "engine": "faster-whisper",
+          "model": "whisper-tiny",
+          "language": "en",
+          "language_probability": 0.9744370579719543,
+          "duration_seconds": 2.169
+        }
+      }
+    },
+    {
+      "endpoint": "/reports",
+      "http_status": 200,
+      "elapsed_seconds": 0.0615,
+      "output": {
+        "report_id": "edd7b436759e47049e0efe4d0604265f",
+        "download_url": "/reports/edd7b436759e47049e0efe4d0604265f",
+        "style": {
+          "font": "sans",
+          "body_size": 12.0,
+          "heading_size": 19,
+          "color": "#174A75",
+          "page_size": "Letter",
+          "orientation": "portrait",
+          "margin": 42.0,
+          "spacing": 10.0,
+          "line_height": 1.4,
+          "emphasis": "bold"
+        },
+        "planner": "rules",
+        "note": "Local design agent selected tools from the brief and result structure."
+      }
+    },
+    {
+      "endpoint": "/reports",
+      "http_status": 200,
+      "elapsed_seconds": 0.0754,
+      "output": {
+        "report_id": "47ded2143d334e99a062517785c8b459",
+        "download_url": "/reports/47ded2143d334e99a062517785c8b459",
+        "style": {
+          "font": "serif",
+          "body_size": 10.0,
+          "heading_size": 19,
+          "color": "#6A2C70",
+          "page_size": "A4",
+          "orientation": "landscape",
+          "margin": 50.0,
+          "spacing": 7.0,
+          "line_height": 1.4,
+          "emphasis": "bold"
+        },
+        "planner": "rules",
+        "note": "Local design agent selected tools from the brief and result structure."
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "name": "sales_image.png",
+      "sha256": "99ee80abfecf27d8f497b147271b545a0ddac4e9b0c74ee8093edeb851d4f256",
+      "bytes": 40698
+    },
+    {
+      "name": "question.wav",
+      "sha256": "9d23400451e7f20d3d1738878d7406148dfcbf6ccbee581c106a2034004397ef",
+      "bytes": 95704
+    }
+  ],
+  "blank_image": {
+    "http_status": 422,
+    "output": {
+      "detail": "No readable text found. Try a sharper, higher-contrast image."
+    },
+    "elapsed_seconds": 0.8984
+  },
+  "long_fixture_pages": 6
+}

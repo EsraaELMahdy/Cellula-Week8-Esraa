@@ -1,0 +1,8 @@
+$ python -m pytest tests tests_task5 -q
+OFFLINE_TESTS=1
+
+........................................................................ [ 86%]
+...........                                                              [100%]
+83 passed in 8.55s
+
+Exit code: 0
